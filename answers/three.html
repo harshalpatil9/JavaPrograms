@@ -5,26 +5,34 @@ Return the merged string.</p>
 <div>
 
     <pre><code class="language-java">
-        class Solution {
+        class Main{
+        public static void main(String[] args){
+            String word1 = "ABABAB";
+            String word2 = "ABAB";
+            mergeAlternately(word1,word2);
+        }
+        
     public String mergeAlternately(String word1, String word2) {
         StringBuffer sb = new StringBuffer();
         int n = word1.length();
         int m = word2.length();
        
         
-        if(n<m){
-            if(n==0)
+        if(n&lt m){           
+            if(n==0){
                 return word2;
-            for(int i=0;i<n;i++){
+            }
+                
+            for(int i=0;i&lt n;i++){
                 sb.append(word1.charAt(i));
                 sb.append(word2.charAt(i));
             }
             sb.append(word2.substring(n,m));
         }
-        else if(n>m){
+        else if(n&gt m){
             if(m==0)
                 return word2;
-            for(int i=0;i<m;i++){
+            for(int i=0;i&lt m;i++){
                 sb.append(word1.charAt(i));
                 sb.append(word2.charAt(i));
             }
@@ -33,7 +41,7 @@ Return the merged string.</p>
         else{
             if(m==0 && n==0)
                 return word2;
-            for(int i=0;i<m;i++){
+            for(int i=0;i&lt m;i++){
                 sb.append(word1.charAt(i));
                 sb.append(word2.charAt(i));
             }
