@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const answerContainer = document.getElementById('answer-container');
 
     const questions = [
-        { id: 1, question: 'What is HTML?', answerFile: 'answers/html.html' },
-        { id: 2, question: 'What is CSS?', answerFile: 'answers/css.html' },
+        { id: 1, question: 'What is HTML?', answerFile: 'answers/one.html' },
+        { id: 2, question: 'What is CSS?', answerFile: 'answers/two.html' },
         // Add more questions as needed
     ];
 
