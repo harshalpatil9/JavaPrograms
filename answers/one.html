@@ -1,3 +1,37 @@
+<link rel="stylesheet" href="styles.css">
 <p>
-    HTML stands for HyperText Markup Language, and it is the standard markup language for creating web pages.
+    Write a method named binaryToDecimal in the Main class that converts a binary number (input as a string) to its decimal equivalent. The method should be robust, handling valid inputs correctly and throwing an IllegalArgumentException for invalid inputs.
 </p>
+<div>
+
+    <pre><code class="language-java">
+        class Main {
+    public static void main(String[] args) {
+        // Example function calls
+        System.out.println(binaryToDecimal("1010")); // Should output 10
+        System.out.println(binaryToDecimal("111")); // Should output 7
+        System.out.println(binaryToDecimal("100")); // Should output 4
+        System.out.println(binaryToDecimal("1010101")); // Should output 85
+        System.out.println(binaryToDecimal("10a1")); // Uncomment to test invalid input
+    }
+
+   // Implement the "binaryToDecimal" method here
+   public static int binaryToDecimal(String s){
+        int n = s.length()-1;
+        int j=0;int sum=0;
+        for(int i=n;i>=0;i--,j++){
+            char c = s.charAt(i);
+            
+            if(c=='1'){
+                sum+= Math.pow(2,j);
+            }
+            else if(c!='0')
+                throw new IllegalArgumentException("The value is not binary");
+            
+        }
+        return sum;
+   }
+}
+
+    </code></pre>
+</div>
