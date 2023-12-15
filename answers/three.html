@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="styles.css">
+<p>You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+Return the merged string.</p>
+<p>https://leetcode.com/problems/merge-strings-alternately/description/</p>
+<div>
+
+    <pre><code class="language-java">
+        class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        StringBuffer sb = new StringBuffer();
+        int n = word1.length();
+        int m = word2.length();
+       
+        
+        if(n<m){
+            if(n==0)
+                return word2;
+            for(int i=0;i<n;i++){
+                sb.append(word1.charAt(i));
+                sb.append(word2.charAt(i));
+            }
+            sb.append(word2.substring(n,m));
+        }
+        else if(n>m){
+            if(m==0)
+                return word2;
+            for(int i=0;i<m;i++){
+                sb.append(word1.charAt(i));
+                sb.append(word2.charAt(i));
+            }
+            sb.append(word1.substring(m,n));
+        }
+        else{
+            if(m==0 && n==0)
+                return word2;
+            for(int i=0;i<m;i++){
+                sb.append(word1.charAt(i));
+                sb.append(word2.charAt(i));
+            }
+        }return sb.toString();
+    }
+}
+    </code></pre>
+</div>
