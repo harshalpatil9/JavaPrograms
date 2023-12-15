@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const questions = [
         { id: 1, question: 'Binary to Decimal Converter', answerFile: 'answers/one.html' },
         { id: 2, question: 'Power of Two', answerFile: 'answers/two.html' },
-        { id: 2, question: '1768. Merge Strings Alternately', answerFile: 'answers/three.html' },
+        { id: 3, question: '1768. Merge Strings Alternately', answerFile: 'answers/three.html' },
+        { id: 4, question: 'Sum of Digits', answerFile: 'answers/four.html' },
         
         // Add more questions as needed
     ];
