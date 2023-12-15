@@ -1,30 +1,45 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
     const questionsContainer = document.getElementById('questions-container');
     const answerContainer = document.getElementById('answer-container');
 
     const questions = [
-        { id: 1, question: 'What is HTML?', answer: 'HTML stands for HyperText Markup Language, and it is the standard markup language for creating web pages.' },
-        { id: 2, question: 'What is CSS?', answer: 'CSS stands for Cascading Style Sheets, and it is used for describing the look and formatting of a document written in HTML.' },
+        { id: 1, question: 'What is HTML?', answerFile: 'answers/html.html' },
+        { id: 2, question: 'What is CSS?', answerFile: 'answers/css.html' },
         // Add more questions as needed
     ];
 
     function showQuestions() {
         questionsContainer.innerHTML = '<h2>Questions:</h2><ul>' +
-            questions.map(question => `<li>${question.id}. ${question.question}</li>`).join('') +
+            questions.map(question => `<li data-id="${question.id}">${question.id}. ${question.question}</li>`).join('') +
             '</ul>';
 
         // Add event listeners to each question item
-        questions.forEach(question => {
-            const listItem = document.querySelector(`li:nth-child(${question.id})`);
-            listItem.addEventListener('click', () => showAnswer(question.id));
+        const questionItems = document.querySelectorAll('li');
+        questionItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                const id = event.target.getAttribute('data-id');
+                showAnswer(id);
+            });
         });
     }
 
-    function showAnswer(id) {
-        const selectedQuestion = questions.find(question => question.id === id);
-        answerContainer.innerHTML = `<h2>${selectedQuestion.id}. ${selectedQuestion.question}</h2><p>${selectedQuestion.answer}</p>`;
-        answerContainer.style.display = 'block';
+    async function showAnswer(id) {
+        const selectedQuestion = questions.find(question => question.id == id);
+        const answerElement = document.getElementById('answer-container');
+        
+        try {
+            const response = await fetch(selectedQuestion.answerFile);
+            const answerHtml = await response.text();
+            
+            answerElement.innerHTML = answerHtml;
+            
+            const isAnswerVisible = answerElement.style.display === 'block';
+
+            // Toggle visibility
+            answerElement.style.display = isAnswerVisible ? 'none' : 'block';
+        } catch (error) {
+            console.error('Error loading answer:', error);
+        }
     }
 
     showQuestions();
