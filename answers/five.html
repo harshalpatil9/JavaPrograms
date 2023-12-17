@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="styles.css">
+<p>
+   Given a string s, reverse only all the vowels in the string and return it.
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.</p>
+<a href="https://leetcode.com/problems/reverse-vowels-of-a-string/description/"></a>
+<div>
+
+    <pre><code class="language-java">
+        class Solution {
+    public static String reverseVowels(String s) {
+        int left=0,right=s.length()-1;
+        char[] c = s.toCharArray();
+        while(left<right){
+            //selecting left vowel
+            while(left<right && !isVowel(c[left]))
+                left++;
+            //selecting right vowel
+            while(left<right && !isVowel(c[right]))
+                right--;
+            
+            //swap
+            char temp = c[left];
+            c[left] = c[right];
+            c[right] = temp;
+
+            left++;
+            right--;
+        }return new String(c);
+    }
+    public static boolean isVowel(char c){
+        return "aeiouAEIOU".indexOf(c)!=-1;
+    }
+}
+    </code></pre>
+</div>
