@@ -10,12 +10,12 @@ The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower an
     public static String reverseVowels(String s) {
         int left=0,right=s.length()-1;
         char[] c = s.toCharArray();
-        while(left<right){
+        while(left&lt right){
             //selecting left vowel
-            while(left<right && !isVowel(c[left]))
+            while(left&lt right && !isVowel(c[left]))
                 left++;
             //selecting right vowel
-            while(left<right && !isVowel(c[right]))
+            while(left&lt right && !isVowel(c[right]))
                 right--;
             
             //swap
