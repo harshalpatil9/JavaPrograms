@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="styles.css">
+<p>151. Reverse Words in a String.</p>
+<p>Given an input string s, reverse the order of the words.
+A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+Return a string of the words in reverse order concatenated by a single space.
+Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.</p>
+<a href="https://leetcode.com/problems/reverse-words-in-a-string/description/"></a><div>
+
+    <pre><code class="language-java">
+        class Solution {
+    public String reverseWords(String s) {
+      //trim() removes the leading and trailing spaces in the string 's' 
+        String[] words = s.trim().split("\\s+");
+        int n= words.length-1;
+        for(int i=0;i<=n;i++,n--){
+            String temp = words[i];
+            words[i] = words[n];
+            words[n] = temp;
+        }
+        return String.join(" ",words);
+    }
+}
+
+    </code></pre>
+</div>
