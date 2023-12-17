@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 2, question: 'Power of Two', answerFile: 'answers/two.html' },
         { id: 3, question: '1768. Merge Strings Alternately', answerFile: 'answers/three.html' },
         { id: 4, question: 'Sum of Digits', answerFile: 'answers/four.html' },
+        { id: 5, question: '345. Reverse Vowels of a String', answerFile: 'answers/five.html' },
         
         // Add more questions as needed
     ];
