@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 5, question: '345. Reverse Vowels of a String', answerFile: 'answers/five.html' },
         { id: 6, question: '151. Reverse Words in a String', answerFile: 'answers/six.html' },
         { id: 7, question: '238. Product of Array Except Self', answerFile: 'answers/seven.html' },
+        { id: 8, question: 'Count Vowels', answerFile: 'answers/eight.html' },
         // Add more questions as needed
     ];
 
