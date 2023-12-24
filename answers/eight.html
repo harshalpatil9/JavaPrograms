@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="styles.css">
+<p>
+  Develop a Java method named calculateVowels within a class named Main. 
+  This method should take a single string as an input and return a map (Map<Character, Integer>) containing vowels as keys and their counts as values..</p>
+<div>
+
+    <pre><code class="language-java">
+        import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+    public static void main(String[] args) {
+        // Example test cases
+        System.out.println(calculateVowels("hello world")); // {e=1, o=2}
+        System.out.println(calculateVowels("rhythm")); // {a=0, e=0, i=0, o=0, u=0}
+    }
+
+    public static Map &lt Character, Integer> calculateVowels(String input) {
+        // Creating a map to store vowel counts
+        Map &lt Character, Integer> vowelCounts = new HashMap<>();
+
+        // Adding vowels to the map with initial count 0
+        vowelCounts.put('a', 0);
+        vowelCounts.put('e', 0);
+        vowelCounts.put('i', 0);
+        vowelCounts.put('o', 0);
+        vowelCounts.put('u', 0);
+
+        // Converting input to lowercase to handle case insensitivity
+        input = input.toLowerCase();
+
+        // Counting vowels in the input string
+        for (char ch : input.toCharArray()) {
+            if (vowelCounts.containsKey(ch)) {
+                // Incrementing the count if the character is a vowel
+                vowelCounts.put(ch, vowelCounts.get(ch) + 1);
+            }
+        }
+
+        return vowelCounts;
+    }
+}
+
+    </code></pre>
+</div>
