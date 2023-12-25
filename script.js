@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 6, question: '151. Reverse Words in a String', answerFile: 'answers/six.html' },
         { id: 7, question: '238. Product of Array Except Self', answerFile: 'answers/seven.html' },
         { id: 8, question: 'Count Vowels', answerFile: 'answers/eight.html' },
+        { id: 9, question: '1071. Greatest Common Divisor of Strings', answerFile: 'answers/nine.html' },
         // Add more questions as needed
     ];
 
