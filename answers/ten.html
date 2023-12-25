@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="styles.css">
+<p>443. String Compression</p>
+<p>Given an array of characters chars, compress it using the following algorithm:
+
+Begin with an empty string s. For each group of consecutive repeating characters in chars:
+
+- If the group's length is 1, append the character to s.
+- Otherwise, append the character followed by the group's length.</p>
+<p>https://leetcode.com/problems/string-compression/description/</p><div>
+
+    <pre><code class="language-java">
+        class Solution {
+    public int compress(char[] chars) {
+        if (chars.length <= 1)
+            return chars.length;
+
+        StringBuilder sb = new StringBuilder();
+        char ch = chars[0];
+        int count = 1;
+
+        for (int i = 1; i <= chars.length; i++) {
+            if (i &lt chars.length && chars[i] == ch) {
+                count++;
+            } else {
+                sb.append(ch);
+                if (count > 1) {
+                    sb.append(count);
+                }
+                if (i &lt chars.length) {
+                    ch = chars[i];
+                    count = 1;
+                }
+            }
+        }
+
+        char[] result = sb.toString().toCharArray();
+        System.arraycopy(result, 0, chars, 0, result.length);
+
+        return result.length;
+    }
+}
+
+    </code></pre>
+</div>
