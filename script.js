@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 7, question: '238. Product of Array Except Self', answerFile: 'answers/seven.html' },
         { id: 8, question: 'Count Vowels', answerFile: 'answers/eight.html' },
         { id: 9, question: '1071. Greatest Common Divisor of Strings', answerFile: 'answers/nine.html' },
+        { id: 10, question: '443. String Compression', answerFile: 'answers/ten.html' },
         // Add more questions as needed
     ];
 
